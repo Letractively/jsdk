@@ -1,0 +1,51 @@
+.Outline{
+
+}
+.OutlineItemOuter{
+
+}
+.OutlineItem{
+	height:16px;
+	font-size:0;
+	white-space: nowrap;
+	overflow:hidden;
+}
+.OutlineItem a,.OutlineItem a:link,.OutlineItem a:visited{
+	color: black;
+	font-size: 12px;
+	text-decoration: none;
+}
+.OutlineItem #button{
+	height: 16px;
+	vertical-align:top;
+	display:inline-block;
+	overflow:hidden;
+}
+.OutlineItem #checkbox{
+	height: 16px;
+	vertical-align:top;
+	display:inline-block;
+	overflow:hidden;
+}
+.OutlineItem #icon{
+	height: 16px;
+	vertical-align:top;
+	display:inline-block;
+	overflow:hidden;
+}
+.OutlineItem #link{
+	margin-left: 1px;
+	border: dotted 1px transparent;
+	padding: 0 2;
+	line-height: 14px;
+	vertical-align:top;
+	display:inline-block;
+	overflow:hidden;
+}
+.ActiveOutlineItem{
+
+}
+.ActiveOutlineItem #link{
+	color: white;
+	background-color: blue;
+}

@@ -1,0 +1,10 @@
+
+$package("js.dom");js.dom.HTMLForm=function(){};var _$class=js.dom.HTMLForm;_$class.$extends("Object");var _$proto=_$class.prototype;_$proto.getItemValue=function(sName){var objs=Global.dom("#"+sName+"#",this);var retValues=[];if(!objs.length){return"";}else if(objs.length==1){var obj=objs[0];if(!obj.length){switch(obj.tagName){case"INPUT":switch(obj.type){case"radio":case"checkbox":if(obj.checked)return obj.value;else return"";default:return obj.value;}
+default:return obj.value;}}else{switch(obj.tagName){case"SELECT":if(obj.multiple){for(var i=0;i<obj.length;i++){var obj=obj.options[i];if(obj.selected)retValues[retValues.length]=obj.value;}
+return retValues;}else{return obj.value;}
+break;default:throw new Error(1,"No support!");}}}else{switch(objs[0].tagName){case"INPUT":switch(objs[0].type){case"text":case"hidden":for(var i=0;i<objs.length;i++){var obj=objs[i];retValues[retValues.length]=obj.value;}
+break;case"radio":for(var i=0;i<objs.length;i++){var obj=objs[i];if(obj.checked){return obj.value;}}
+break;case"checkbox":for(var i=0;i<objs.length;i++){var obj=objs[i];if(obj.checked)retValues[retValues.length]=obj.value;}
+break;default:throw new Error(1,"\u83b7\u53d6\u8868\u5355\u9879\u503c\u9519\u8bef!\u8be5\u529f\u80fd\u4e0d\u652f\u6301\u7c7b\u578b\u4e3a\""+objs[0].type+"\"\u7684\u5143\u7d20!");}
+break;default:throw new Error(1,"\u83b7\u53d6\u8868\u5355\u9879\u503c\u9519\u8bef!\u6807\u8bc6\u4e3a\""+sName+"\"\u7684\u6587\u6863\u5143\u7d20\u5e76\u4e0d\u552f\u4e00!");}}
+return retValues;}

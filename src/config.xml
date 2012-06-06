@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Config version="0.1">
+	<debug important="false">false</debug>
+	<cache important="false">false</cache>
+	<appName important="false">JSDK</appName>
+	<include></include>
+	<fileExtension>
+		<class></class>
+		<lib></lib>
+	</fileExtension>
+	<charset>gb2312</charset>
+</Config>

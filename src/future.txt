@@ -1,0 +1,38 @@
+﻿【近期目标】
+1.进一步解决类的多个版本和多个语言版本的导入问题。
+2.研究对象克隆技术，以最大化地实现多个网页之间的对象克隆。
+3.优化预处理模块，实现多个类的导入优化。
+4.升级公共方法“dom”，使之支持XML查询。
+5.增加方法发布类接口“IMethodPublishClass”，用于发布方法到全局类和类包中
+6.通过在document下多次增加脚本的引入标签来多次异步加载类库文件，并可预处理
+导入类代码。这样可在多处引入库文件和多次预处理。以提高加载效率。
+7.进一步解决多个异步操作的覆盖问题
+
+【远期目标】
+1.在本地模式下模拟实现一个本地服务器，使之可以使用ajax的get与put方法
+2.实现一个桌面，可在本地模式下集成应用扩展
+
+【目标版本V2.0】
+1.动态装载类采用异步方式，从而在运行依赖于本框架或其中的类时的调用方法必须有所变化。
+共可有如下三中引入方式:
+(1)引入框架
+<script appName="jsdk" debug="false" mode="auto|alone|main|sub" src="/jsdk3x/loader.js" contentType="engine">
+$import("js.util.ArrayList");
+</script>
+
+(2)导入类
+<script src="/jsdk3x/loader.js" contentType="class">
+$import("js.util.ArrayList");
+</script>
+
+(3)运行脚本
+1)
+<script src="/jsdk3x/loader.js" contentType="script">
+</script>
+2)其中，contentType可省略
+<script src="/jsdk3x/loader.js">
+</script>
+3)可直接通过框架的脚本执行函数插入到队列中运行
+jsdk.exec(function(){
+   //to do...
+});

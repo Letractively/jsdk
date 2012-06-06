@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> Classes: js.lang.String.serialize </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script appName="jsdk" debug="false" src="../../../../src/loader.js"></script>
+ </head>
+
+ <body>
+	Input: <br>
+	<textarea name="F_Input" rows="10" cols="50"></textarea>
+	<input type="button" value="serialize" onclick="document.getElementsByName('F_Code')[0].value=document.getElementsByName('F_Input')[0].value.serialize();"><br><br>
+	Serialized Code: <br>
+	<textarea name="F_Code" rows="5" cols="50"></textarea>
+	<input type="button" value="run" onclick="document.getElementsByName('F_Output')[0].value=eval(document.getElementsByName('F_Code')[0].value)"><br><br>
+	Output: <br>
+	<textarea name="F_Output" rows="10" cols="50"></textarea><br>
+ </body>
+</html>

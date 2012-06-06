@@ -1,0 +1,28 @@
+命名规则为：
+
+MyClass[_V(version)][_(lang)][.(browser)].class.js
+
+其中：
+1.version
+形如：n[.n[.n]]
+说明：n为数字
+例如：1, 1.2, 1.2.3
+
+2.lang
+形如：国家代码-语言代码
+例如：zh-CN, us-EN  
+
+3.browser
+形如：浏览器名[主版本号]
+例如：IE, IE6, IE7, Firefox, Firefox3, Chrome
+
+完整命名例子：
+TreeView_V1.2.3_zh-CN.IE.class.js
+TreeView_V1.2.3_zh-CN.IE.class
+TreeView_V1.2.3_zh-CN.class
+TreeView_V1.2.3_EN.IE.class
+TreeView_V1.2.3.IE.class
+TreeView_V1.2.3.class
+TreeView_zh-CN.class
+TreeView.IE.class
+TreeView.class

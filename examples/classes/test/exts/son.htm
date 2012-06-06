@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <script>var startDate=new Date();</script>
+  <script appName="JSDK" debug="false" src="../../../../src/loader.js">
+  $import("test.exts.Son");
+  </script>
+  <script>var endDate=new Date();</script>
+ </HEAD>
+
+ <BODY>
+  <script>
+	document.write("<center>共耗时"+Date.computeTime("ms",endDate-startDate,3)+"毫秒</center>");
+  </script>
+  <p>四个期望的alert窗口是：</p>
+  <div style="border:solid 1px gray;background-color: #DDDDDD">
+	No.1 alert: <br>
+    grandpa's name: Michael <br>
+	<br>
+    No.2 alert: <br>
+    grandpa's name: John <br>
+    father's name: John <br>
+	<br>
+    No.3 alert: <br>
+    grandpa's name: Tom <br>
+    father's name: Tom <br>
+    son's name: Tom <br>
+	<br>
+	No.4 alert: <br>
+    grandpa's family name: William <br>
+    son's family name: William <br>
+  </div>
+  <hr>
+  <script>
+	var g = new JSDK.Grandpa('Michael', 'William');
+    alert(g.getName()); 
+    var f = new JSDK.Father('John', 'William');
+    alert(f.getName());
+    var s = new JSDK.Son('Tom', 'William');
+    alert(s.getName());
+    alert(s.getFamilyName());
+  </script>
+ </BODY>
+</HTML>

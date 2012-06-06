@@ -1,0 +1,14 @@
+{
+	debug: false,
+	cache: false,
+	appName: "JSDK",
+	fileExtension: {
+		"class" : {
+			"source": ".class.js",
+			"compile": ".class"
+		},
+		"classApiDoc" : ".doc.js",
+		"lib" : ".json"
+	}
+
+}
