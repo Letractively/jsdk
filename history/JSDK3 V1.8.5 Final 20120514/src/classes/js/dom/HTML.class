@@ -1,0 +1,26 @@
+
+$package("js.dom");js.dom.HTML={}
+var _$class=js.dom.HTML;_$class.getScreenLeft=function(elObj){var left=window.screenLeft;for(var node=elObj;node&&typeof(node.offsetLeft)!="undefined";node=node.offsetParent){left+=node.offsetLeft;}
+left-=document.body.scrollLeft;return left+2;}
+_$class.getScreenTop=function(elObj){var top=window.screenTop;var offset=0;for(var oWindow=window;;oWindow=oWindow.parent){if(oWindow.frameElement&&oWindow.frameElement.nodeName=="IFRAME"){offset+=this.getTopOnWindow(oWindow.frameElement);}
+if(oWindow==oWindow.parent)break;}
+top-=offset;for(var node=elObj;node&&typeof(node.offsetTop)!="undefined";node=node.offsetParent){top+=node.offsetTop;}
+top-=document.body.scrollTop;return top+2;}
+_$class.getScreenRight=function(elObj){return this.getScreenLeft(elObj)+this.getWindowWidth(elObj)-1;}
+_$class.getScreenBottom=function(elObj){return this.getScreenTop(elObj)+this.getWindowHeight(elObj)-1;}
+_$class.getWindowWidth=function(elObj){var width=elObj.offsetWidth;return width;}
+_$class.getWindowHeight=function(elObj){var height=elObj.offsetHeight;return height;}
+_$class.getDocHeight=function(doc){if(Global.Browser.Engine.trident){if(doc.compatMode!="CSS1Compat"){return doc.body.scrollHeight;}else{return doc.documentElement.scrollHeight;}}else{return doc.documentElement.offsetHeight;}}
+_$class.getLeftOnDoc=function(elObj){var retValue=0;for(;elObj;elObj=elObj.offsetParent){retValue+=elObj.offsetLeft;}
+return retValue;}
+_$class.getTopOnDoc=function(elObj){var retValue=0;for(;elObj;elObj=elObj.offsetParent){retValue+=elObj.offsetTop;}
+return retValue;}
+_$class.getRightOnDoc=function(elObj){return this.getLeftOnDoc(elObj)+this.getWindowWidth(elObj)-1;}
+_$class.getBottomOnDoc=function(elObj){return this.getTopOnDoc(elObj)+this.getWindowHeight(elObj)-1;}
+_$class.contains=function(elWrap,elChild){while(elChild&&typeof(elChild.parentNode)!="undefined"){if(elWrap==elChild)return true;elChild=elChild.parentNode;}
+return false;};_$class.setStyleClass=function(elObj,iOptions,className,className1){var aClasses=elObj.getAttribute("class").split(" ").trim();var index=aClasses.findElement(className,true);switch(iOptions){case undefined:case 0:if(index>=0){return;}else{aClasses.addElement(className);elObj.className=aClasses.join(" ");}
+break;case 1:if(index>=0){aClasses.removeElement(index);elObj.className=aClasses.join(" ");}
+break;case 2:if(index>=0){aClasses[index]=className;elObj.className=aClasses.join(" ");}else{aClasses.addElement(className);elObj.className=aClasses.join(" ");}
+break;case 3:if(index>=0){aClasses[index]=className1;elObj.className=aClasses.join(" ");}else if(aClasses.findElement(className1,true)<0){aClasses.addElement(className1);elObj.className=aClasses.join(" ");}
+break;}}
+_$class.setInnerHTML=function(el,htmlCode){if(Browser.Engine.name=="trident"){htmlCode='<div style="display:none">for IE</div>'+htmlCode;htmlCode=htmlCode.replace(/<script([^>]*)>/gi,'<script$1 defer>');el.innerHTML='';el.innerHTML=htmlCode;el.removeChild(el.firstChild);}else{var el_next=el.nextSibling;var el_parent=el.parentNode;el_parent.removeChild(el);el.innerHTML=htmlCode;if(el_next){el_parent.insertBefore(el,el_next);}else{el_parent.appendChild(el);}}}

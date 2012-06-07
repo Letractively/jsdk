@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <base target="main">
+  <script appName="jsdk" src="common/jsdk_loader.js">
+  $import("js.ui.menu.Outline");
+  </script>
+  <style>
+  body,table{
+	font-size: 9pt;
+  }
+  body{
+	margin: 7px 5px;
+  }
+  .category{
+	font-weight: bold;
+  }
+  .entry{
+	margin-left: 16px;
+  }
+  .taskmenu{
+
+  }
+  .taskmenu-category{
+	margin-bottom: 10px;
+	border: solid 1px #2783DE;
+  }
+  .taskmenu-title{
+	line-height: 24px;
+	padding: 0px 5px;
+	font-weight: bold;
+	color: white;
+	background-color: #2783DE;
+  }
+  .taskmenu-content{
+	min-height: 30px;
+	padding: 3px;
+  }
+  .taskmenu-item{
+	line-height: 1.5em;
+  }
+  .taskmenu-item a, .taskmenu-item a:link, .taskmenu-item a:visited{
+	color: black;
+	text-decoration:none;
+	padding-left: 15px;
+	background: url(common/icons/icon01.gif) 1px 1px no-repeat;
+  }
+  .taskmenu-item a:hover{
+	color: blue;
+	text-decoration:underline;
+  }
+  </style>
+  <script>
+  var jsdk_path=jsdk.Engine.runtimeEnvironment.getRootPath().replace(/^[/\\][a-z]:/i,"");
+  </script>
+ </head>
+
+ <body>
+  <div style="font-weight:bold;font-size: 12pt"><span style="color: blue">JSDK3</span><span style="vertical-align:text-top;font-size: 8px">TM</span> Examples</div>
+  <hr>
+  <div>
+    <a href="main.htm">首页</a>
+	<a href=javascript:outline.expandAll(true); target=_self>全部展开</a>
+	<a href=javascript:outline.expandAll(false); target=_self>全部折叠</a>
+	<a href=javascript:window.location.reload(); target=_self>刷新</a>
+  </div>
+  <hr>
+  <div class="taskmenu">
+    <div class="taskmenu-category">
+		<div class="taskmenu-title">基本检测</div>
+		<div class="taskmenu-content">
+			<div class="taskmenu-item"><a href="classes/js/detect/shell/OS.htm">操作系统检测</a></div>
+			<div class="taskmenu-item"><a href="classes/js/detect/shell/Browser.htm">浏览器检测</a></div>
+		</div>
+	</div>
+    <div class="taskmenu-category">
+		<div class="taskmenu-title">页面功能</div>
+		<div class="taskmenu-content">
+			<div class="taskmenu-item"><a href="classes/js/dom/@DOMTemplate/DOMTemplate 2.htm">DOM模版</a></div>
+			<div class="taskmenu-item"><a href="classes/js/dom/@HTMLForm_V1.2/HTMLForm 2.htm">表单验证</a></div>
+		</div>
+	</div>
+	<div class="taskmenu-category">
+		<div class="taskmenu-title">典型案例</div>
+		<div class="taskmenu-content">
+		<div class="taskmenu-item"><a href="#">树型菜单</a></div>
+		<div class="taskmenu-item"><a href="classes/js/ui/menu/@PopupMenuLite/PopupMenuLite_02.htm">弹出菜单</a></div>
+		<div class="taskmenu-item"><a href="classes/js/ui/@SelectDialogBox/SelectDialogBox.htm">选择对话框</a></div>
+		<div class="taskmenu-item"><a href="classes/js/ui/@PopupDialog/PopupDialog.htm">弹出对话框</a></div>
+		<div class="taskmenu-item"><a href="classes/js/ui/@WebReminderDialogBox/WebReminderDialogBox.htm">提醒对话框</a></div>
+		<div class="taskmenu-item"><a href="#">任务提醒</a></div>
+		<div class="taskmenu-item"><a href="classes/js/ui/parser/@Table/Table.htm">复合表格</a></div>
+		<div class="taskmenu-item"><a href="classes/js/ui/photo/@MiniSlide/MiniSlide.htm">迷你幻灯片</a></div>
+		</div>
+	</div>
+	<div class="taskmenu-category">
+		<div class="taskmenu-title">所有例子</div>
+		<div class="taskmenu-content">
+			 <script src="menu.js"></script>
+		</div>
+	</div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> Sample - Class: js.parser.Table </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script debug="false" src="../../../../../common/jsdk_loader.js">
+  $import("js.ui.table.TableEditor");
+  </script>
+  <script src="../../../../example.js"></script>
+
+  <style>
+  .table td{
+	text-align: center;
+  }
+  .table-header{
+	background-color: #D6EEFB;
+  }
+  .interlace{
+	background-color: #F3F3F3;
+  }
+  #data input{
+	width: 350px;
+  }
+  </style>
+ </head>
+
+ <body>
+	<h3><script>document.write(example.title)</script></h3>
+	<hr>
+	<form>
+	<table id="data" border=1 style="margin: 0px auto;width:960px">
+	<tr style="background-color: #DEDEDE">
+		<td colspan="4" align="center">hidden fields</td>
+	</tr>
+	<tr>
+		<td>name:</td>
+		<td><input type="text" name="F_Name"></td>
+		<td>sex:</td>
+		<td><input type="text" name="F_Sex"></td>
+	</tr>
+	<tr>
+		<td>birthday:</td>
+		<td><input type="text" name="F_Birthday"></td>
+		<td>stature:</td>
+		<td><input type="text" name="F_Stature"></td>
+	</tr>
+	<tr>
+		<td>constellation:</td>
+		<td colspan="3"><input type="text" name="F_Constellation"></td>
+	</tr>
+	<tr>
+		<td>msc_reprtwork:</td>
+		<td colspan="3"><input type="text" name="F_MSC_Reprtwork"></td>
+	</tr>
+	<tr>
+		<td>mov_reprtwork:</td>
+		<td colspan="3"><input type="text" name="F_MOV_Reprtwork"></td>
+	</tr>
+	<tr style="background-color: #DEDEDE">
+		<td>rows count:</td>
+		<td colspan="3"><input type="text" name="F_RowsCount"></td>
+	</tr>
+	</table>
+	<hr>
+	<script>
+	var thisform=document.forms[0];
+	var data=jsdk.get("data.json","",true,"","json");
+	thisform.F_Name.value=data.names.map(function(lucida){
+		return lucida.name;
+	}).join(";");
+	thisform.F_Sex.value=data.names.map(function(lucida){
+		return lucida.sex;
+	}).join(";");
+	thisform.F_Birthday.value=data.names.map(function(lucida){
+		return [lucida.birthday.getFullYear(),lucida.birthday.getMonth()+1,lucida.birthday.getDate()].join("-");
+	}).join(";");
+	thisform.F_Stature.value=data.names.map(function(lucida){
+		return lucida.stature;
+	}).join(";");
+	thisform.F_Constellation.value=data.names.map(function(lucida){
+		return lucida.constellation;
+	}).join(";");
+	thisform.F_MSC_Reprtwork.value=data.names.map(function(lucida){
+		return lucida.msc_reprtwork;
+	}).join(";");
+	thisform.F_MOV_Reprtwork.value=data.names.map(function(lucida){
+		return lucida.mov_reprtwork;
+	}).join(";");
+	thisform.F_RowsCount.value=data.names.length;
+	</script>
+	<div style="width:960px;margin: 15px auto;">
+		<div style="text-align: center;font-size: 18pt;font-weight: bold;margin: 15px 0px">明星档案表</div>
+		<script>
+		var editor=new jsdk.TableEditor("",0,"");
+		editor.addColumn("name","F_Name","Text","64",0);
+		editor.addColumn("sex","F_Sex","Text","32",0);
+		editor.addColumn("birthday","F_Birthday","Text","100",0);
+		editor.addColumn("stature","F_Stature","Text","45",0);
+		editor.addColumn("constellation","F_Constellation","Text","80",0);
+		editor.addColumn("representative work for music","F_MSC_Reprtwork","Text","",0);
+		editor.addColumn("representative work for movie","F_MOV_Reprtwork:","Text","",0);
+		editor.setStoreFieldFor("AllCount","F_RowsCount");
+		editor.load();
+		editor.show();
+		</script>
+	</div>
+	</div>
+	</form>
+ </body>
+</html>

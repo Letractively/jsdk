@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <script appName="jsdk" debug="false" src="../../../../src/loader.js">
+  $import("js.util.ArrayList");
+  </script>
+ </HEAD>
+
+ <BODY>
+  <script>
+  var array1=[2,1,3];
+  var array=[
+	{title: "bbb", id: 2},
+	{title: "aaa", id: 1},
+	{title: "ccc", id: 3}
+  ];
+  alert(jsdk.ArrayList.sort(array1,"Number",0,function(item){
+	return item;
+  }));
+  jsdk.ArrayList.sort(array,"Number",0,function(item){
+	return item.id;
+  });
+  array.forEach(function(item,index,array){
+	document.write(item.title+"<br>");
+  },array);
+  </script>
+ </BODY>
+</HTML>

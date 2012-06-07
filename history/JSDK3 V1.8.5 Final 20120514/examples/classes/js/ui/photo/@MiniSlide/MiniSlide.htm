@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> test - Class: js.ui.photo.MiniSlide (按CSS1标准样式) </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script appName="jsdk" debug="false" src="../../../../../common/jsdk_loader.js">
+  $import("js.ui.photo.MiniSlide");
+  </script>
+  <script src="../../../../example.js"></script>
+ </head>
+
+ <body>
+	<h3><script>document.write(example.title)</script></h3>
+	<hr>
+	<div style="float:left">
+	<script>
+	jsdk.MiniSlide.addStyleSkin("my",{
+		url: (jsdk.Browser.Engine.trident&&document.compatMode!="CSS1Compat"?"my.IE.css":"my.css"),
+		".MiniSlide .box": {
+			borderWidth: 1
+		},
+		".MiniSlideTabBar img": {
+			url: "images/bckgrd_gray.jpg"
+		}
+	});
+	jsdk.MiniSlide.setStyleSkin("my");
+	var slide1=new jsdk.MiniSlide("",402,318,16);
+	slide1.setIsAloneDisplayTabBar(false);
+	slide1.setIsStretchPhoto(false);
+	slide1.setInterval(2000);
+	slide1.setIsCircle(true);
+	slide1.addPhoto("","","photo/01.jpg");
+	slide1.addPhoto("","","photo/YM.jpg");
+	slide1.addPhoto("","","photo/02.jpg");
+	slide1.addPhoto("","","photo/winxp.jpg");
+	slide1.addPhoto("","","photo/03.jpg");
+	slide1.startPlay();
+	</script>
+	</div>
+	<div style="width: 600px;height:375px;float:left;margin: 0px 5px">
+	<script>
+	var slide1=new jsdk.MiniSlide("","100%","100%");
+	slide1.setIsAloneDisplayTabBar(true);
+	slide1.setIsStretchPhoto(false);
+	slide1.setInterval(2000);
+	slide1.setIsCircle(true);
+	slide1.setIsPauseOnEntering(true);
+	slide1.addPhoto("","","photo/01.jpg");
+	slide1.addPhoto("","","photo/YM.jpg","http://www.wunmei.com.cn");
+	slide1.addPhoto("","","photo/02.jpg");
+	slide1.addPhoto("","","photo/winxp.jpg");
+	slide1.addPhoto("","","photo/03.jpg");
+	slide1.startPlay();
+	</script>
+	</div>
+	<div style="width: 200px;height:355px;float:right;margin: 0px 5px">
+	<script>
+	var slide1=new jsdk.MiniSlide("","100%","100%");
+	slide1.setIsAloneDisplayTabBar(true);
+	slide1.setIsStretchPhoto(false);
+	slide1.setInterval(2000);
+	slide1.setIsCircle(false);
+	slide1.addPhoto("","","photo/01.jpg");
+	slide1.addPhoto("","","photo/YM.jpg");
+	slide1.addPhoto("","","photo/02.jpg");
+	slide1.addPhoto("","","photo/winxp.jpg");
+	slide1.addPhoto("","","photo/03.jpg");
+	slide1.startPlay();
+	</script>
+	</div>
+ </body>
+</html>
